@@ -2,8 +2,8 @@
 Contributors: jesin
 Tags: email validation, comments, spam, validation, anti-spam, contact form 7, jetpack, grunion, contact form
 Requires at least: 3.1.0
-Tested up to: 3.9
-Stable tag: 1.1
+Tested up to: 4.0
+Stable tag: 1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -32,6 +32,10 @@ So `user.name.abc@yahoo.com` perfectly passes the [is_email()](http://codex.word
 This plugin requires a Mailgun Public API Key which can be obtained through a free [sign-up at Mailgun](https://mailgun.com/signup)(No credit card required).
 
 If you're trying out this plugin on a local WAMP/LAMP/MAMP installation make sure your system is connected to the Internet for this plugin to contact Mailgun.
+
+= Available Languages =
+* English
+* Serbo-Croatian by [Borisa Djuraskovic](http://www.webhostinghub.com/)
 
 = Further Reading =
 Read about Mailgun's email validation service.
@@ -84,10 +88,16 @@ Mailgun has created a [jquery demo](http://mailgun.github.io/validator-demo/) at
 
 == Changelog ==
 
+= 1.2 =
+* 3rd September 2014
+* Added Serbo-Croatian language, props [Borisa Djuraskovic](http://www.webhostinghub.com/)
+
 = 1.1 =
+* 3rd November 2013
 * Plugin is translation ready
 
 = 1.0 =
+* 5th October 2013
 * Initial version
 
 == Screenshots ==
