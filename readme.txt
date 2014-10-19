@@ -3,7 +3,7 @@ Contributors: jesin
 Tags: email validation, comments, spam, validation, anti-spam, contact form 7, jetpack, grunion, contact form
 Requires at least: 3.1.0
 Tested up to: 4.0
-Stable tag: 1.2
+Stable tag: 1.2.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -87,6 +87,10 @@ by choosing the **Support** tab of this plugin. If you directly create a thread 
 Mailgun has created a [jquery demo](http://mailgun.github.io/validator-demo/) at this page. The code for this demo is [available here](https://github.com/mailgun/validator-demo/tree/gh-pages).
 
 == Changelog ==
+
+= 1.2.1 =
+* 19th October 2014
+* Use HTTP HEAD instead of GET to validate API key. [More details...](https://wordpress.org/support/topic/a-http-error-occurred-when-validating-the-api-error-code-502-bad-gateway)
 
 = 1.2 =
 * 3rd September 2014
