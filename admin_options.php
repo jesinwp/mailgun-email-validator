@@ -129,7 +129,7 @@ jQuery(document).ready(
 			);
 
 			//We are using a static email here as only the API is validated
-			$response = wp_remote_head( "https://api.mailgun.net/v2/address/validate?address=foo%40mailgun.net", $args );
+			$response = wp_remote_request( "https://api.mailgun.net/v2/address/validate?address=foo%40mailgun.net", $args );
 
 			//A Network error has occurred
 			if( is_wp_error($response) )
