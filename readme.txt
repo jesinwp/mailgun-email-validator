@@ -43,7 +43,7 @@ Read about Mailgun's email validation service.
 * <http://blog.mailgun.com/post/free-email-validation-api-for-web-forms/>
 * <http://blog.mailgun.com/post/weekly-product-update-improvements-to-email-validation-api/>
 * [Mailgun Address Validator demo](http://mailgun.github.io/validator-demo/) and its [source code](https://github.com/mailgun/validator-demo/tree/gh-pages)
-* The [Mailgun Email Validator Plugin](http://jesin.tk/wordpress-plugins/mailgun-email-validator/) official homepage.
+* The [Mailgun Email Validator Plugin](http://websistent.com/wordpress-plugins/mailgun-email-validator/) official homepage.
 
 == Installation ==
 
@@ -58,7 +58,7 @@ Read about Mailgun's email validation service.
 = Why did you create this plugin? =
 I hate comment spam because it bloats my database. I also don't like bugging my visitors with CAPTCHAs in the form of scribbled text, 
 counting the puppies and answering questions like *What is 3 + 2?*
-So when Mailgun released their email validation service I tried validating the email addresses of comments in the spam queue of [my blog](http://jesin.tk).
+So when Mailgun released their email validation service I tried validating the email addresses of comments in the spam queue of [my blog](http://websistent.com).
 I found that nearly 50% of these email addresses were identified incorrect by Mailgun. 
 Thus this plugin was born. Though not as effective as CAPTCHAs this plugin can prevent a decent amount of spam while maintaining user experience.
 

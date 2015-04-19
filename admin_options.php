@@ -27,7 +27,7 @@ if( !class_exists( 'Email_Validation_Mailgun_Admin' ) )
 		{
 			global $email_validation_mailgun;
 			array_unshift( $links, '<a href="'.admin_url( 'options-general.php?page=' . $email_validation_mailgun->slug ).'">' . __( 'Settings', $email_validation_mailgun->slug ) . '</a>' );
-			$links[] = '<a href="http://jesin.tk/wordpress-plugins/" target="_blank" title="' . sprintf( __( 'More Plugins by %s', $email_validation_mailgun->slug ), 'Jesin' ) . '">' . __( 'More Plugins', $email_validation_mailgun->slug ) . '</a>';
+			$links[] = '<a href="http://websistent.com/wordpress-plugins/" target="_blank" title="' . sprintf( __( 'More Plugins by %s', $email_validation_mailgun->slug ), 'Jesin' ) . '">' . __( 'More Plugins', $email_validation_mailgun->slug ) . '</a>';
 			return $links;
 		}
 
@@ -129,7 +129,7 @@ jQuery(document).ready(
 			);
 
 			//We are using a static email here as only the API is validated
-			$response = wp_remote_request( "https://api.mailgun.net/v2/address/validate?address=foo%40mailgun.net", $args );
+			$response = wp_remote_request( "https://api.mailgun.net/v3/address/validate?address=foo%40mailgun.net", $args );
 
 			//A Network error has occurred
 			if( is_wp_error($response) )
@@ -181,7 +181,7 @@ jQuery(document).ready(
 					'Authorization' => 'Basic ' . base64_encode( "api:".$this->options['mailgun_pubkey_api'] )
 				)
 			);
-			$response = wp_remote_request( "https://api.mailgun.net/v2/address/validate?address=" . urlencode( $_POST['email_id'] ), $args );
+			$response = wp_remote_request( "https://api.mailgun.net/v3/address/validate?address=" . urlencode( $_POST['email_id'] ), $args );
 
 			if( is_wp_error($response) )
 			{
