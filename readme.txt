@@ -3,7 +3,7 @@ Contributors: jesin
 Tags: email validation, comments, spam, validation, anti-spam, contact form 7, jetpack, grunion, contact form
 Requires at least: 3.1.0
 Tested up to: 4.6
-Stable tag: 1.2.2
+Stable tag: 1.2.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -88,6 +88,10 @@ by choosing the **Support** tab of this plugin. If you directly create a thread 
 Mailgun has created a [jquery demo](http://mailgun.github.io/validator-demo/) at this page. The code for this demo is [available here](https://github.com/mailgun/validator-demo/tree/gh-pages).
 
 == Changelog ==
+
+= 1.2.3 =
+* 16th October 2016
+* Removed PHP4 style constructors for PHP 7 compatibility
 
 = 1.2.2 =
 * 21st April 2015

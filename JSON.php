@@ -15,7 +15,7 @@ define('SERVICES_JSON_SUPPRESS_ERRORS', 32);
 define('SERVICES_JSON_USE_TO_JSON', 64);
 class Services_JSON
 {
-function Services_JSON($use = 0)
+function __construct($use = 0)
 {
 $this->use = $use;
 $this->_mb_strlen            = function_exists('mb_strlen');
@@ -459,7 +459,7 @@ return substr( $string, $start, $length );
 if (class_exists('PEAR_Error')) {
 class Services_JSON_Error extends PEAR_Error
 {
-function Services_JSON_Error($message = 'unknown error', $code = null,
+function __construct($message = 'unknown error', $code = null,
 $mode = null, $options = null, $userinfo = null)
 {
 parent::PEAR_Error($message, $code, $mode, $options, $userinfo);
@@ -468,7 +468,7 @@ parent::PEAR_Error($message, $code, $mode, $options, $userinfo);
 } else {
 class Services_JSON_Error
 {
-function Services_JSON_Error($message = 'unknown error', $code = null,
+function __construct($message = 'unknown error', $code = null,
 $mode = null, $options = null, $userinfo = null)
 {
 }
