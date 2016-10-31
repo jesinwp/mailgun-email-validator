@@ -20,6 +20,10 @@ if ( ! function_exists( 'json_decode' ) ) {
 	}
 }
 
+if ( defined( 'WP_CLI' ) && WP_CLI ) {
+	require_once 'wpcli.php';
+}
+
 if ( ! class_exists( 'Email_Validation_Mailgun' ) ) {
 	class Email_Validation_Mailgun {
 		private $options = NULL;
