@@ -13,10 +13,11 @@ if ( ! function_exists( 'json_decode' ) ) {
 		require_once 'JSON.php';
 		$json = new Services_JSON();
 
-		if ( $assoc )
+		if ( $assoc ) {
 			return (array) $json->decode( $string );
-		else
+		} else {
 			return $json->decode( $string );
+		}
 	}
 }
 
@@ -42,15 +43,17 @@ if ( ! class_exists( 'Email_Validation_Mailgun' ) ) {
 		//Function which sends the email to Mailgun to check it
 		public function validate_email( $emailID ) {
 			//If the format of the email itself is wrong return false without further checking
-			if( ! filter_var( $emailID, FILTER_VALIDATE_EMAIL ) )
-				return FALSE;
+			if ( ! filter_var( $emailID, FILTER_VALIDATE_EMAIL ) ) {
+				return false;
+			}
 
 			//If no API was entered don't do anything
-			if( ! isset( $this->options['mailgun_pubkey_api'] ) || empty( $this->options['mailgun_pubkey_api'] ) )
-				return TRUE;
+			if ( ! isset( $this->options['mailgun_pubkey_api'] ) || empty( $this->options['mailgun_pubkey_api'] ) ) {
+				return true;
+			}
 
 			$args = array(
-				'sslverify' => FALSE,
+				'sslverify' => false,
 				'headers' => array(
 					'Authorization' => 'Basic ' . base64_encode( "api:".$this->options['mailgun_pubkey_api'] )
 				)
@@ -59,8 +62,9 @@ if ( ! class_exists( 'Email_Validation_Mailgun' ) ) {
 			$response = wp_remote_request( "https://api.mailgun.net/v3/address/validate?address=".urlencode($emailID), $args );
 
 			//If there was a HTTP or connection error pass the validation so that the website visitor doesn't know anything
-			if( is_wp_error( $response ) || isset( $response['error'] ) || '200' != $response['response']['code'] )
-				return TRUE;
+			if ( is_wp_error( $response ) || isset( $response['error'] ) || '200' != $response['response']['code'] ) {
+				return true;
+			}
 
 			//Extract the JSON response and return the result
 			$result = json_decode( $response['body'], true );
@@ -71,4 +75,6 @@ if ( ! class_exists( 'Email_Validation_Mailgun' ) ) {
 	$email_validation_mailgun = new Email_Validation_Mailgun();
 }
 
-if ( is_admin() ) require_once dirname( __FILE__ ) . '/admin_options.php';
+if ( is_admin() ) {
+	require_once dirname( __FILE__ ) . '/admin_options.php';
+}
