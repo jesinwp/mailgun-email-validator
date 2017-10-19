@@ -41,6 +41,7 @@ if ( ! class_exists( 'Email_Validation_Mailgun' ) ) {
 
 		//Function which sends the email to Mailgun to check it
 		public function validate_email( $emailID ) {
+			global $pagenow, $wp;
 			//If the format of the email itself is wrong return false without further checking
 			if( ! filter_var( $emailID, FILTER_VALIDATE_EMAIL ) )
 				return FALSE;
@@ -49,6 +50,9 @@ if ( ! class_exists( 'Email_Validation_Mailgun' ) ) {
 			if( ! isset( $this->options['mailgun_pubkey_api'] ) || empty( $this->options['mailgun_pubkey_api'] ) )
 				return TRUE;
 
+			if ( "edit.php" == $pagenow && "shop_order" == $wp->query_vars['post_type'] ) {
+				return true;
+			}
 			$args = array(
 				'sslverify' => FALSE,
 				'headers' => array(
